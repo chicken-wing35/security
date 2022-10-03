@@ -115,5 +115,5 @@ Selection=2 UNION select name,type,cost from session.car;#
 
 Selection=2 UNION select id,pass,name from session.user;#
 
-
+xfreerdp /u:student /v:IP_Address /dynamic-resolution +glyph-cache +clipboard
 
