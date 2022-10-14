@@ -237,3 +237,7 @@ check ip neigh as a last resort
 if 2 buttons are vuln to sql annotate both and stick with one 
 check all possible numbers for coloummn ammounts 
 
+
+
+audit /get /category:*
+
